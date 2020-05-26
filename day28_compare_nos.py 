@@ -1,0 +1,27 @@
+''' Read input from STDIN. Print your output to STDOUT '''
+    #Use input() to read input from STDIN and use print to write your output to STDOUT
+
+#Sub,itted by thr3sh0ld
+def main():
+    x,y= map(int,input().split())
+    c, d = x, y
+    result, result1=0,0
+    while True:
+        if x==0 and y==0:
+            break
+        if x > 0:
+            result = result + (x%10)
+            x = int(x/10)
+        if y > 0:
+            result1 = result1 + (y%10)
+            y = int(y/10)
+    if result>result1:
+        print(c, end='')
+    elif result1>result:
+        print(d, end ='')
+    else:
+        print("Equal")
+ # Write code here 
+
+main()
+
