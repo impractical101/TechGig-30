@@ -1,0 +1,29 @@
+''' Read input from STDIN. Print your output to STDOUT '''
+    #Use input() to read input from STDIN and use print to write your output to STDOUT
+
+def main():
+    def find(mat, n): 
+        d1 = 0
+        d2 = 0; 
+        for i in range(0, n):  
+            for j in range(0, n):
+                if (i == j): 
+                    d1 += mat[i][j]
+                if i + j == n - 1: 
+                    d2 += mat[i][j] 
+        return d1, d2
+
+    arr =[]
+    row, column = map(int,input().split())
+    for i in range(row):
+        arr.append(list(map(int, input().split())))
+    n = len(arr)
+    first, second = find(arr,n)
+    
+    if first == second:
+        print('Equal', end='')
+    elif first > second:
+        print('Diagonal 1', end='')
+    else:
+        print('Diagonal 2', end='')
+main()
